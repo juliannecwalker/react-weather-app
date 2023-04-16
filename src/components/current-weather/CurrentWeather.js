@@ -11,26 +11,26 @@ const CurrentWeather = ({data}) => {
                 <img alt="weather" className='weather-icon' src={`icons/${data.weather[0].icon}.png`} />
             </div>
             <div className='bottom'>
-                <p className='temperature'>{data.}°F</p>
+                <p className='temperature'>{Math.round(data.main.temp)}°F</p>
                 <div className='details'>
                     <div className='parameter-row'>
                         <span className='parameter-label'>Details</span>
                     </div>
                     <div className='parameter-row'>
                         <span className='parameter-label'>Feels like</span>
-                        <span className='parameter-value'>46°F</span>
+                        <span className='parameter-value'>{Math.round(data.main.feels_like)}°F</span>
                     </div>
                     <div className='parameter-row'>
                         <span className='parameter-label'>Wind</span>
-                        <span className='parameter-value'>10 mi/hr</span>
+                        <span className='parameter-value'>{data.wind.speed}mi/hr</span>
                     </div>
                     <div className='parameter-row'>
                         <span className='parameter-label'>Humidity</span>
-                        <span className='parameter-value'>15%</span>
+                        <span className='parameter-value'>{data.main.humidity}%</span>
                     </div>
                     <div className='parameter-row'>
                         <span className='parameter-label'>Pressure</span>
-                        <span className='parameter-value'>11hPa</span>
+                        <span className='parameter-value'>{data.main.pressure}hPa</span>
                     </div>
                 </div>
             </div>
